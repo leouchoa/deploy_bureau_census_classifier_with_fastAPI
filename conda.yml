@@ -1,0 +1,20 @@
+name: deploy_bureau_clf
+channels:
+        - conda-forge
+        - defaults
+dependencies:
+        - python==3.8
+        - numpy
+        - pandas
+        - scikit-learn
+        - pytest
+        - requests
+        - pip
+        - dvc
+        - boto3
+        - dvc-s3
+        - pip:
+                - fastapi==0.63.0
+                - uvicorn
+                - gunicorn
+
