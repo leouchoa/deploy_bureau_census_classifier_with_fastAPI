@@ -1,0 +1,4 @@
+[core]
+    remote = bureau-census-data
+['remote "bureau-census-data"']
+    url = s3://bureau-census-data
