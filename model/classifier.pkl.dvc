@@ -1,0 +1,4 @@
+outs:
+- md5: 5c21ea8aa455eed58e1fa792c08077fa
+  size: 65928715
+  path: classifier.pkl
