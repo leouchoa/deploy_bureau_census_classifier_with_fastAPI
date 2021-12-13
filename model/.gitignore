@@ -1,3 +1,5 @@
 /classifier.pkl
 /label_binarizer.pkl
 /encoder.pkl
+/model_metrics_by_slice.csv
+/overall_metrics.txt
