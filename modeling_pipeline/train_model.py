@@ -68,7 +68,7 @@ def train_model(
     model.save_model(path_to_save=path_to_save_model, clf=clf)
 
     eval.model_metrics_by_slice(
-        target_df=X_test,
+        target_df=test_df,
         clf=clf,
         encoder=encoder,
         lb=lb,
@@ -77,7 +77,7 @@ def train_model(
     )
 
     eval.overall_model_metrics(
-        target_df=X_test,
+        target_df=test_df,
         clf=clf,
         encoder=encoder,
         lb=lb,
