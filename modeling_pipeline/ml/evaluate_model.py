@@ -9,10 +9,11 @@ import pickle as pkl
 from typing import Dict
 
 import pandas as pd
-from ml import model
-from ml import utils as ut
-from ml.data import process_data
 from sklearn.metrics import fbeta_score, precision_score, recall_score
+
+from modeling_pipeline.ml import model
+from modeling_pipeline.ml import utils as ut
+from modeling_pipeline.ml.data import process_data
 
 
 def compute_model_metrics(true_y, predicted_y):
@@ -191,11 +192,11 @@ def overall_model_metrics(
 
 
 if __name__ == "__main__":
-    data_path = "../../data/train_test_split/test_df.csv"
+    data_path = "data/train_test_split/test_df.csv"
 
     test_data = pd.read_csv(data_path)
 
-    clf, encoder, lb = load_model_and_processors("../../model")
+    clf, encoder, lb = load_model_and_processors("model")
 
     model_metrics_by_slice(
         target_df=test_data,
@@ -203,7 +204,7 @@ if __name__ == "__main__":
         encoder=encoder,
         lb=lb,
         categorical_features=ut.get_cat_features(),
-        save_to="../../model",
+        save_to="model",
     )
 
     overall_model_metrics(
@@ -212,5 +213,5 @@ if __name__ == "__main__":
         encoder=encoder,
         lb=lb,
         categorical_features=ut.get_cat_features(),
-        save_to="../../model",
+        save_to="model",
     )
