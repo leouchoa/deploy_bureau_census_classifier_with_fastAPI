@@ -6,16 +6,18 @@ Main function for model training. Steps executed are:
 - Train and save model
 - Compute and save overall/sliced model metrics
 """
-from ml import evaluate_model as eval
-from ml import model
-from ml import utils as ut
-from ml.data import process_data, save_data_processors, split_and_save
 from sklearn.model_selection import train_test_split
 
+from modeling_pipeline.ml import evaluate_model as eval
+from modeling_pipeline.ml import model
+from modeling_pipeline.ml import utils as ut
+from modeling_pipeline.ml.data import (process_data, save_data_processors,
+                                       split_and_save)
+
 TEST_SIZE = 0.2
-PATH_TO_DATA = "../data/census_cleaned.csv"
-PATH_TO_DATA_TRAIN_TEST_DF = "../data/"
-PATH_TO_SAVE_MODEL = "../model/"
+PATH_TO_DATA = "data/census_cleaned.csv"
+PATH_TO_DATA_TRAIN_TEST_DF = "data/"
+PATH_TO_SAVE_MODEL = "model/"
 LABEL = "salary"
 
 
