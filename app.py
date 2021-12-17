@@ -27,7 +27,7 @@ def greeting():
     """
     Home welcome message
     """
-    return {"Welcome!"}
+    return {"message": "Welcome!"}
 
 
 # makes sure that FastAPI imports the model only when
