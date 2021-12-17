@@ -4,17 +4,18 @@ Test suite for functions in `ml/`
 import os
 import pickle as pkl
 
-import ml.data as data
-import ml.evaluate_model as eval
-import ml.model as model_utils
 import pandas as pd
 import pytest
-from ml import utils as ut
+
+import modeling_pipeline.ml.data as data
+import modeling_pipeline.ml.evaluate_model as eval
+import modeling_pipeline.ml.model as model_utils
+import modeling_pipeline.ml.utils as ut
 
 TEST_SIZE = 0.2
-PATH_TO_DATA = "../data/census_cleaned.csv"
-PATH_TO_DATA_TRAIN_TEST_DF = "../data/"
-PATH_TO_SAVE_MODEL = "../model/"
+PATH_TO_DATA = "data/census_cleaned.csv"
+PATH_TO_DATA_TRAIN_TEST_DF = "data/"
+PATH_TO_SAVE_MODEL = "model/"
 LABEL = "salary"
 
 
@@ -23,7 +24,7 @@ def df():
     """
     Load dataset and attach it to session with fixture
     """
-    df = pd.read_csv("../data/census_cleaned.csv")
+    df = pd.read_csv("data/census_cleaned.csv")
     return df
 
 
@@ -32,8 +33,8 @@ def train_test_dfs():
     """
     Load train/test datasets and attach it to session with fixture
     """
-    train_df = pd.read_csv("../data/train_test_split/train_df.csv")
-    test_df = pd.read_csv("../data/train_test_split/test_df.csv")
+    train_df = pd.read_csv("data/train_test_split/train_df.csv")
+    test_df = pd.read_csv("data/train_test_split/test_df.csv")
 
     return (train_df, test_df)
 
