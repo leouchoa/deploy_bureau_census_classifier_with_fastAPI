@@ -3,7 +3,20 @@ Code for creating an API with FastAPI. The requests an user can make is to
 ask for predictions in a given dataset.
 
 For now the code only supports online predictions.
+
+About the following dyno config:
+    This is necessary for Heroku to pull the necessary
+    artifacts using dvc, when deploying the app.
+    Must be executed prior to importing any other modules.
 """
+import os
+
+if "DYNO" in os.environ and os.path.isdir(".dvc"):
+    os.system("dvc config core.no_scm true")
+    if os.system("dvc pull") != 0:
+        exit("dvc pull failed")
+    os.system("rm -r .dvc .apt/usr/lib/dvc")
+
 import pandas as pd
 from fastapi import FastAPI
 
