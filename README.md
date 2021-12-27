@@ -23,6 +23,8 @@ There's a [model card](https://modelcards.withgoogle.com/about) for you to under
 
 All the code and model passes through an CI/CD lifecycle in order to ensure realiability of the deployed service. Tests are stored in the [tests folder](https://github.com/leouchoa/deploy_bureau_census_classifier_with_fastAPI/tree/main/tests) and are automatically run whenever a push to the main branch occours. So the main branch is the deployed branch and all development must occour outside of that branch.
 
+Besides that there's a continuous deployment configured in heroku. Everytime a there's a commit in the main branch, heroku waits for the CI tests to pass to only them re-deploy the app, so the app is only updated whenever the code passes all the tests.
+
 
 ### Pre-Commit
 
